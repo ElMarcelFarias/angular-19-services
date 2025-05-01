@@ -1,0 +1,56 @@
+<div>
+    <!-- Exibindo a lista de filmes
+    <div *ngIf="movies.length > 0; else noMovies">
+      <div *ngFor="let movie of movies">
+        <h2>{{ movie.title }} ({{ movie.year }})</h2>
+        <p><strong>Winner:</strong> {{ movie.winner ? 'Yes' : 'No' }}</p>
+        <p><strong>Studios:</strong> {{ movie.studios.join(', ') }}</p>
+        <p><strong>Producers:</strong> {{ movie.producers.join(', ') }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noMovies>
+      <p>No movies found.</p>
+    </ng-template> -->
+  
+    <!-- Exibindo os anos com múltiplos vencedores
+    <div *ngIf="yearsWithMultipleWinners.length > 0; else noYears">
+      <div *ngFor="let year of yearsWithMultipleWinners">
+        <h3>{{ year.year }} - {{ year.winnerCount }} winners</h3>
+      </div>
+    </div>
+
+    <!-- Exibindo os estúdios com o número de vitórias -->
+    <!-- <div *ngIf="studioWinners.length > 0; else noYears">
+        <div *ngFor="let studio of studioWinners">
+        <h4>{{ studio.name }} - {{ studio.winCount }} vitórias</h4>
+        </div>
+    </div>
+  
+    <ng-template #noYears>
+      <p>No years with multiple winners found.</p>
+    </ng-template> --> 
+    
+
+      <!-- Exibindo os intervalos de vitórias dos produtores -->
+    <div *ngIf="producerWinIntervals.min && producerWinIntervals.max">
+        <h3>Produtores com Menor Intervalo de Vitórias:</h3>
+        <div *ngFor="let producer of producerWinIntervals.min">
+        <h4>{{ producer.producer }} - Intervalo: {{ producer.interval }} anos</h4>
+        <p>Vitória anterior: {{ producer.previousWin }} | Vitória seguinte: {{ producer.followingWin }}</p>
+        </div>
+
+        <h3>Produtores com Maior Intervalo de Vitórias:</h3>
+        <div *ngFor="let producer of producerWinIntervals.max">
+        <h4>{{ producer.producer }} - Intervalo: {{ producer.interval }} anos</h4>
+        <p>Vitória anterior: {{ producer.previousWin }} | Vitória seguinte: {{ producer.followingWin }}</p>
+        </div>
+    </div>
+
+    <ng-template #noProducers>
+        <p>No producer win intervals found.</p>
+    </ng-template>
+
+
+  </div>
+  
